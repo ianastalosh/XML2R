@@ -17,7 +17,7 @@ urlsToDocs <- function(urls, local = FALSE, quiet = FALSE, ...) {
   #keep only urls that exist
   if (!local) {
    # urls <- urls[vapply(urls, url_ok, logical(1), USE.NAMES=FALSE)]
-    text <- lapply(urls, function(x) content(GET(x, ...), as = "text"))
+    text <- lapply(urls, function(x) content(GET(x, ...), as = "text", encoding = "UTF-8"))
   } else {
     text <- urls
   }
